@@ -1,0 +1,115 @@
+/* from KISSY Style , thx KISSY */
+/*维护 iyutaoo@gmail.com, 308898042@qq.com*/
+/*
+reset.css
+理念：清除和重置是紧密不可分的
+特色：1.适应中文 2.基于最新主流浏览器
+维护：玉伯(lifesinger@gmail.com), 正淳(ragecarrier@gmail.com)
+*/
+
+/** 清除内外边距 **/
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote,em,span, /* structural elements 结构元素 */
+dl, dt, dd, ul, ol, li, /* list elements 列表元素 */
+pre, /* text formatting elements 文本格式元素 */
+form, fieldset, lengend, button, input, textarea, /* form elements 表单元素 */
+th, td { /* table elements 表格元素 */
+    margin: 0;
+    padding: 0;
+    font-style:normal;
+    font-weight:100;
+}
+
+/** 设置默认字体 **/
+body,
+button, input, select, textarea { /* for ie */
+    /*font: 12px/1 Tahoma, Helvetica, Arial, "宋体", sans-serif;*/
+    font: 12px/1 Tahoma, Helvetica, Arial, "\5b8b\4f53", sans-serif; /* 用 ascii 字符表示，使得在任何编码下都无问题 */
+    outline:none;/* 禁止chrome下输入框focus时加上的outline*/
+}
+
+h1 { font-size: 18px; /* 18px / 12px = 1.5 */ }
+h2 { font-size: 16px; }
+h3 { font-size: 14px; }
+h4, h5, h6 { font-size: 100%; }
+
+address, cite, dfn, em, var { font-style: normal; } /* 将斜体扶正 */
+code, kbd, pre, samp, tt { font-family: "Courier New", Courier, monospace; } /* 统一等宽字体 */
+small { font-size: 12px; } /* 小于 12px 的中文很难阅读，让 small 正常化 */
+
+/** 重置列表元素 **/
+ul, ol { list-style: none; }
+
+/** 重置文本格式元素 **/
+a { text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+abbr[title], acronym[title] { /* 注：1.ie6 不支持 abbr; 2.这里用了属性选择符，ie6 下无效果 */
+	border-bottom: 1px dotted;
+	cursor: help;
+}
+
+q:before, q:after { content: ''; }
+
+/** 重置表单元素 **/
+legend { color: #000; } /* for ie6 */
+fieldset, img { border: none; } /* img 搭车：让链接里的 img 无边框 */
+/* 注：optgroup 无法扶正 */
+button, input, select, textarea {
+    font-size: 100%; /* 使得表单元素在 ie 下能继承字体大小 */
+}
+
+/** 重置表格元素 **/
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/** 其它 **/
+hr {
+    border: none;
+    height: 1px;
+}
+
+
+.clearfix:after {content:"\200B"; display:block; height:0; clear:both; }
+.clearfix { *zoom:1; }/*for ie6,7*/
+.fl{float:left;_display:inline;}
+.fr{float:right;_display:inline;}
+.display{display:block;}
+.none{display:none;}
+.pd10{padding:0 10px 0 10px;}
+.pd15{padding:0 15px 0 15px;}
+.pd20{padding:0 20px 0 20px;}
+.pdtp20{padding-top:20px;}
+.ml200{margin-left:200px;}
+.ml125{margin-left:125px;}
+.mt12{margin-top:12px;}
+body .margin0{margin: 0;}
+.margin10{margin: 10px;}
+.margint1{margin-top:-1px;}
+.marginb1{margin-bottom:-1px;}
+
+a,a:hover{text-decoration:none;}
+
+.w100{width:100px;}
+.wd1000{width:1000px;margin:0 auto;}
+.pink{color:#9f8548;}
+.pink1{color:#C55467;}
+
+.table-bars{background: #f2f2f2;border: 1px solid #CBCBCB;line-height: 35px;}
+.btncommon{
+padding: 0 6px 0 6px;
+height: 26px;
+line-height: 26px;
+text-align: center;
+background-color: #c7ad69;
+color: #fff;
+display: inline-block;
+zoom: 1;
+margin-right: 5px;
+border-radius: 2px;
+}
+.textindent5{text-indent:5px;}
+.textindent10{text-indent:10px;}
+.textindent15{text-indent:15px;}
+

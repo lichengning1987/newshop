@@ -1,0 +1,237 @@
+@charset "UTF-8";
+/*外部引入*/
+/*默认变量*/
+/*默认为1:纯色背景,2:渐变背景*/
+/*混入*/
+/*定位*/
+/*transition*/
+/*transform*/
+/*animation*/
+/*渐变背景*/
+/*backface-visibility*/
+/*perspective*/
+/*盒子阴影*/
+/*user-select*/
+/*box-sizing*/
+/*transform-origin*/
+/*行高与高度相同*/
+/*占位符*/
+/*滚动*/
+/*定位*/
+*{margin:0;padding:0;}
+body,html{
+    width:100%;
+    height:100%;
+}
+.jq-carousel-wrap {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+/*宽度高度100%*/
+/*表格单元格*/
+.jq-carousel .spinnerbox {
+  display: table-cell;
+  vertical-align: middle;
+  line-height: initial;
+}
+
+/*高度自动撑高*/
+/*all动画*/
+.jq-carousel-title {
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+/*transform动画*/
+.jq-carousel-wrap.transform {
+  -webkit-transition: -webkit-transform 0.5s ease;
+  transition: transform 0.5s ease;
+}
+
+/*visible*/
+/*hidden*/
+/*核心css end*/
+/*焦点图*/
+.jq-carousel {
+  overflow: hidden;
+  position: relative;
+  display: table;
+  /*防止动画过程闪烁*/
+  /*防止动画过程闪烁*/
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-perspective: 1000;
+  perspective: 1000;
+}
+.jq-carousel .spinnerbox {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  -webkit-transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease;
+  opacity: 0;
+}
+.jq-carousel.loading .spinnerbox {
+  opacity: 1;
+}
+
+/*滚动容器*/
+.jq-carousel-wrap {
+  overflow: hidden;
+}
+.jq-carousel-wrap > * {
+  display: block;
+  float: left;
+  overflow: hidden;
+  -webkit-transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease;
+}
+.loading .jq-carousel-wrap > * {
+  opacity: 0;
+}
+
+/*title*/
+.jq-carousel-title {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  line-height: 24px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  text-indent: 10px;
+  text-shadow: 0 0 3px rgba(0, 0, 0, 0.8);
+  /*动画*/
+  -webkit-transform: translate3d(0, 100%, 0);
+  transform: translate3d(0, 100%, 0);
+}
+.jq-carousel-title.visible {
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+
+/*pager*/
+.jq-carousel-pager {
+  position: absolute;
+  right: 4px;
+  bottom: 4px;
+  display:none;
+}
+.jq-carousel-pager span {
+  display: block;
+  float: left;
+  margin: 0 4px 4px 0;
+  width: 8px;
+  height: 8px;
+  border-radius: 8px;
+  -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+  background-color: rgba(255, 255, 255, 0.5);
+}
+.jq-carousel-pager span.selected {
+  -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.9);
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.9);
+  background-color: rgba(255, 255, 255, 0.9);
+}
+.vertical .jq-carousel-pager span {
+  float: initial;
+}
+
+/*焦点图 end*/
+/*焦点图*/
+.jq-carousel-wrap{width:100%;}
+.carousel {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.i0 {
+  background: url(../img/swipe/pp1.jpg);
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover;
+}
+
+.i1 {
+  background: url(../img/swipe/pp2.jpg);
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover;background-size: cover;
+}
+
+.i2 {
+  background: url(../img/swipe/pp3.jpg);
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover;background-size: cover;
+}
+
+.i3 {
+  background: url(../img/swipe/pp4.jpg);
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover;
+}
+
+.i4 {
+  background: url(../img/swipe/pp5.jpg);
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover;
+}
+.i5 {
+  background: url(../img/swipe/pp6.jpg);
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover;
+}
+.i6 {
+  background: url(../img/swipe/pp7.jpg);
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover;
+}
+
+
+
+.mod_start {
+position: absolute;
+z-index: 10;
+left: 50%;
+bottom: 3px;
+margin-left: -17px;
+width: 34px;
+height: 34px;
+overflow: hidden;
+border-radius: 999px;
+}
+.mod_start i {
+position: absolute;
+top: 9px;
+left: 9px;
+width: 17px;
+height: 16px;
+-webkit-animation: start 1.8s infinite ease-in-out;
+background-image: url(../img/swipe/arrowlv.png);
+background-size: cover;
+}
+@-webkit-keyframes start{0%,50%{opacity:0;-webkit-transform:translate(0,12px)}
+    75%{opacity:1;-webkit-transform:translate(0,2px)}
+    100%{opacity:0;-webkit-transform:translate(0,-8px)}}

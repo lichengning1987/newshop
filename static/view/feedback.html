@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <title>商旅生活手机购物正品商城：一家专门做特卖的网站手机版手机版</title>
+    <meta content="商旅生活手机购物，正品商城，品牌特卖会" name="keywords">
+    <meta content="商旅生活手机购物网以1-7折超低折扣对全球各大品牌进行限时特卖，商城内正品囊括服装、化妆品、家居、奢侈品等。100%正品、手机购物下单、货到付款、7天无条件退货。" name="description">
+    <link href="../css/base.css" rel="stylesheet" type="text/css" />
+    <link href="../css/index.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div class="wrap">
+    <div class="l_commArea">
+        <div class="connerdiv">
+        <form name="addressForm_" action="" method="POST">
+           <input type="hidden" name="sec_act" value="">
+           <dl class="connerbox">
+                <dd>
+                    <span><em>*</em>反馈内容：</span>
+                    <textarea name="address" rows="5" class="textarea_input textarea_address" placeholder="让吐槽来的更猛烈些吧"></textarea>
+                </dd>
+               <dd><span><em>*</em>反馈类型：</span>
+                    <select id="province" name="province" class="text_select">
+                        <option value="110000">功能问题</option>
+						<option value="120000">界面问题</option>
+						<option value="130000">流程问题</option>
+						<option value="140000">操作问题</option>
+						<option value="140000">其他</option>
+				    </select>
+                </dd>
+            </dl>
+            <div class="ui_btn" style="">
+                <input type="button" onclick="address_check(this.form, 1)" class="h_sureBtn" value="提交" >
+            </div>
+        </form>
+    </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    function address_check(form) {
+        var type = <?php echo $type?>;
+        if(type == 1){
+            var isajax = arguments[1] ? arguments[1] : 0;
+            var address = form.address.value;
+            var zipcode = form.zipcode.value;
+        }
+        if(type == 1){
+            if (address.length < 1) {
+                alert('请输入反馈问题');
+                form.address.focus();
+                return false
+            };
+        }
+
+        form.submit()
+    };
+</script>
+
+</body>
+</html>

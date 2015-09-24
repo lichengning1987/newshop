@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+<script language="javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script language="javascript">
+    $(document).ready(function(){
+        //JS SDK 只适合于支持JSONP格式的聚合数据接口
+        //JS SDK 调用数据会使您的APPKEY处于暴露状态，请慎用
+        var appkey = '';
+        var url = 'http://apis.juhe.cn/ip/ip2addr';
+        $.getJSON(url+"?callback=?", {
+            "ip" : 'www.juhe.cn',
+            "dtype" : "jsonp",
+            "key" : "xxxxxxxxxx"
+        }, function(data) {
+            var errorcode = data.error_code;
+            if( errorcode ==0){
+                //数据正常返回
+                var address = data.result.area +" "+ data.result.location;
+                alert(address);
+            }else{
+                alert(errorcode+":"+data.reason);
+            }
+        });
+
+    })
+</script>
+</body>
+</html>

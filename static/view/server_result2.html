@@ -1,0 +1,139 @@
+
+<!DOCTYPE>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <title>退单结果</title>
+    <meta content="商旅生活手机购物，正品商城，品牌特卖会" name="keywords">
+    <meta content="商旅生活手机购物网以1-7折超低折扣对全球各大品牌进行限时特卖，商城内正品囊括服装、化妆品、家居、奢侈品等。100%正品、手机购物下单、货到付款、7天无条件退货。" name="description">
+    <link href="../css/base.css" rel="stylesheet" type="text/css" />
+    <link href="../css/index.css" rel="stylesheet" type="text/css" />
+
+</head>
+<body>
+<div class="wrap wrapMenu">
+    <div class="l_commArea">
+        <div class="l_exchange clearfix">
+            <div class="sideArea">
+                <div class="circle cl_first check">
+                    <p class="check_1">提交申请</p>
+                    <p class="check_2"></p>
+                </div>
+                <div class="result-line">
+                    <div class="l_lines">
+
+                    </div>
+                </div>
+                <div class="circle <?php if(count($steps) <= 1):?>discircle<?php endif;?> logistics">
+                    <p class="logistics_1">商家审核</p>
+                    <p class="logistics_2"></p>
+                </div>
+                <div class="result-line">
+                    <div class="l_lines <?php if(count($steps) <= 1):?>l_lines1<?php endif;?>">
+
+                    </div>
+                </div>
+                <div class="circle <?php if(count($steps) <= 2):?>discircle<?php endif;?> return">
+                    <p class="return_1">平台审核</p>
+                    <p class="return_2"></p>
+                </div>
+                <div class="result-line">
+                    <div class="l_lines <?php if(count($steps) <= 2):?>l_lines1<?php endif;?>">
+
+                    </div>
+                </div>
+                <div class="circle <?php if(count($steps) <= 2):?>discircle<?php endif;?> return_result">
+                    <p class="return_result_1">完成</p>
+                    <p class="return_result_2"></p>
+                </div>
+            </div>
+            <div class="contentArea">
+                <div class="l_step1">
+                    <p class="l_step1_p"><?php echo ($chargeback -> status == 0)?'取消申请':'申请成功'?></p>
+                    <span class="l_exTime"><?php echo $chargeback -> createtime?></span>
+                </div>
+                <div class="l_step1 j_step2">
+                    <?php if(count($steps) <= 1):?>
+                    <?php if($chargeback -> status):?>
+                    <div class="pns" >
+                        <span class="l_exTime l_color">审核中,请耐心等待...</span>
+                    </div>
+                    <?php endif;?>
+                    <?php else:?>
+                    <div class="pns" >
+                        <span class="l_exTime"><?php echo $steps[1]['datetime'];?></span>
+                        <p>
+
+                            处理意见：<?php echo (count($steps) == 2 && $chargeback -> status == $SERVICE_STATUS['DENY'])?'拒绝':'同意'?>
+                        </p>
+                        <div class="beizhu">
+                            备注：<?php echo $steps[1]['remark']?>
+                        </div>
+
+                    </div>
+                    <?php endif;?>
+
+
+                </div>
+                <div class="l_step1 l_step3">
+                    <?php if(count($steps) <= 2):?>
+                    <?php if($chargeback -> status):?>
+                    <div class="pns" >
+                        <span class="l_exTime l_color">审核中,请耐心等待...</span>
+                    </div>
+                    <?php endif;?>
+                    <?php else:?>
+                    <div class="pns" >
+                        <span class="l_exTime"><?php echo $steps[2]['datetime']?></span>
+                        <p>
+
+                            处理意见：<?php echo (count($steps) == 3 && $chargeback -> status == $SERVICE_STATUS['DENY'])?'拒绝':'同意'?>
+                        </p>
+                        <div class="beizhu">
+                            备注：<?php echo $steps[2]['remark']?>
+                        </div>
+
+                    </div>
+                    <?php endif;?>
+                </div>
+                <div class="l_step1 l_step4">
+                    <?php if(count($steps) >= 3 && $chargeback -> status == $SERVICE_STATUS['CLOSE']):?>
+                    <div class="pns" >
+                        <span class="l_exTime"><?php echo $steps[2]['datetime']?></span>
+                        <p class="l_step1_p">退单成功</p>
+                    </div>
+                    <?php elseif(count($steps) >= 3 && $chargeback -> status == $SERVICE_STATUS['DENY']):?>
+                    <div class="pns" >
+                        <span class="l_exTime"><?php echo $steps[2]['datetime']?></span>
+                        <p class="l_step1_p">退单拒绝</p>
+                    </div>
+                    <?php endif;?>
+                </div>
+
+            </div>
+        </div>
+        <a class="fhBtn" href="order_list_v2.php?type=refund">
+            返回退单列表
+        </a>
+
+    </div>
+    <!-- footer start -->
+    <div class="head footer">
+        <div class="row foot-txt">
+            <div class="col-20 col1"><a href="index.html" ></a><p class="head-name">首 页</p></div>
+            <div class="col-20 col2"><a href="#"></a><p class="head-name">分 类</p></div>
+            <div class="col-20 col3"><a href="#"></a><p class="head-name">啊呜社区</p></div>
+            <div class="col-20 col4"><a href="cart.html"></a><p class="head-name">购物车</p></div>
+            <div class="col-20 col5"><a href="my.html"></a><p class="head-name">个人中心</p></div>
+        </div>
+    </div>
+    <!-- footer start -->
+</div>
+
+
+</body>
+</html>
